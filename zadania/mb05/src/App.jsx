@@ -4,6 +4,7 @@ import Gallery from './components/Gallery'
 import Footer from './components/Footer'
 import AddPhotoModal from './components/AddPhotoModal'
 import FiltersOffcanvas from './components/FiltersOffcanvas'
+import './App.css'
 function App() {
   return (
     <>
