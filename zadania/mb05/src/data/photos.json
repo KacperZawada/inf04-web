@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Górski szlak",
+    "description": "Widok na górski szlak o poranku.",
+    "category": "gory",
+    "image": "https://picsum.photos/seed/gory1/600/400",
+    "imageLarge": "https://picsum.photos/seed/gory1/1200/800",
+    "alt": "Górski krajobraz"
+  },
+  {
+    "id": 2,
+    "title": "Szczyty",
+    "description": "Ośnieżone szczyty gór.",
+    "category": "gory",
+    "image": "https://picsum.photos/seed/gory2/600/400",
+    "imageLarge": "https://picsum.photos/seed/gory2/1200/800",
+    "alt": "Ośnieżone góry"
+  },
+  {
+    "id": 3,
+    "title": "Nad morzem",
+    "description": "Spokojny dzień nad morzem.",
+    "category": "morze",
+    "image": "https://picsum.photos/seed/morze1/600/400",
+    "imageLarge": "https://picsum.photos/seed/morze1/1200/800",
+    "alt": "Widok na morze"
+  },
+  {
+    "id": 4,
+    "title": "Plaża",
+    "description": "Piaszczysta plaża i błękitna woda.",
+    "category": "morze",
+    "image": "https://picsum.photos/seed/morze2/600/400",
+    "imageLarge": "https://picsum.photos/seed/morze2/1200/800",
+    "alt": "Piaszczysta plaża"
+  },
+  {
+    "id": 5,
+    "title": "Centrum miasta",
+    "description": "Nowoczesna zabudowa w centrum.",
+    "category": "miasto",
+    "image": "https://picsum.photos/seed/miasto1/600/400",
+    "imageLarge": "https://picsum.photos/seed/miasto1/1200/800",
+    "alt": "Centrum miasta"
+  },
+  {
+    "id": 6,
+    "title": "Ulica",
+    "description": "Miejska ulica pełna życia.",
+    "category": "miasto",
+    "image": "https://picsum.photos/seed/miasto2/600/400",
+    "imageLarge": "https://picsum.photos/seed/miasto2/1200/800",
+    "alt": "Miejska ulica"
+  },
+  {
+    "id": 7,
+    "title": "Górska dolina",
+    "description": "Zielona dolina otoczona górami.",
+    "category": "gory",
+    "image": "https://picsum.photos/seed/gory3/600/400",
+    "imageLarge": "https://picsum.photos/seed/gory3/1200/800",
+    "alt": "Górska dolina"
+  },
+  {
+    "id": 8,
+    "title": "Port",
+    "description": "Łodzie zacumowane w porcie.",
+    "category": "morze",
+    "image": "https://picsum.photos/seed/morze3/600/400",
+    "imageLarge": "https://picsum.photos/seed/morze3/1200/800",
+    "alt": "Port nad morzem"
+  }
+]
