@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar'
-
+import CategoryBar from './components/CategoryBar'
 function App() {
   return (
     <>
@@ -35,6 +35,9 @@ function App() {
           </div>
         </div>
       </header>
+      <main className="container">
+        <CategoryBar />
+      </main>
     </>
   )
 }
