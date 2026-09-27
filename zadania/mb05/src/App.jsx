@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar'
 import CategoryBar from './components/CategoryBar'
 import Gallery from './components/Gallery'
-
+import Footer from './components/Footer'
 function App() {
   return (
     <>
@@ -42,6 +42,8 @@ function App() {
         <CategoryBar />
         <Gallery />
       </main>
+
+      <Footer />
     </>
   )
 }
