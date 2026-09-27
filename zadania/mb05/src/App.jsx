@@ -1,5 +1,7 @@
 import Navbar from './components/Navbar'
 import CategoryBar from './components/CategoryBar'
+import Gallery from './components/Gallery'
+
 function App() {
   return (
     <>
@@ -35,8 +37,10 @@ function App() {
           </div>
         </div>
       </header>
+
       <main className="container">
         <CategoryBar />
+        <Gallery />
       </main>
     </>
   )
