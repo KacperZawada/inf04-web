@@ -1,3 +1,15 @@
+const NAZWA_KATEGORII = {
+  gory: 'Góry',
+  morze: 'Morze',
+  miasto: 'Miasto',
+}
+
+const KOLOR_KATEGORII = {
+  gory: 'success',
+  morze: 'primary',
+  miasto: 'dark',
+}
+
 function PhotoCard({
   id,
   title,
@@ -5,36 +17,44 @@ function PhotoCard({
   category,
   image,
   alt,
+  favorite,
   onUsun,
+  onPrzelacz,
 }) {
-  const categoryLabel =
-    category === 'gory'
-      ? 'Góry'
-      : category === 'morze'
-        ? 'Morze'
-        : 'Miasto'
-
-  const categoryColor =
-    category === 'gory'
-      ? 'success'
-      : category === 'morze'
-        ? 'primary'
-        : 'secondary'
-
   return (
-    <article className="card h-100">
+    <div className="card h-100 shadow-sm">
       <img src={image} className="card-img-top" alt={alt} />
 
       <div className="card-body d-flex flex-column">
-        <div className="d-flex justify-content-between align-items-start gap-2">
-          <h2 className="card-title h5">{title}</h2>
+        <div className="d-flex justify-content-between align-items-start">
+          <h3 className="card-title h5">{title}</h3>
 
-          <span className={`badge text-bg-${categoryColor}`}>
-            {categoryLabel}
-          </span>
+          <button
+            type="button"
+            className="btn btn-link p-0 fs-4 lh-1"
+            onClick={onPrzelacz}
+            aria-label={
+              favorite ? 'Usuń z ulubionych' : 'Dodaj do ulubionych'
+            }
+            aria-pressed={favorite}
+          >
+            {favorite ? (
+              <i className="bi bi-star-fill text-warning" />
+            ) : (
+              <i className="bi bi-star" />
+            )}
+          </button>
         </div>
 
-        <p className="card-text">{description}</p>
+        <p>
+          <span className={`badge text-bg-${KOLOR_KATEGORII[category]}`}>
+            {NAZWA_KATEGORII[category]}
+          </span>
+        </p>
+
+        <p className="card-text text-body-secondary">
+          {description}
+        </p>
 
         <div className="d-flex gap-2 mt-auto">
           <button
@@ -55,7 +75,7 @@ function PhotoCard({
           </button>
         </div>
       </div>
-    </article>
+    </div>
   )
 }
 

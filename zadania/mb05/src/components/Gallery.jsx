@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import PhotoCard from './PhotoCard.jsx'
 import PhotoModal from './PhotoModal.jsx'
 
-function Gallery({ zdjecia, onUsun }) {
+function Gallery({ zdjecia, onUsun, onPrzelacz }) {
   return (
     <div id="galeria" className="row g-4">
       {zdjecia.map(zdjecie => (
@@ -11,6 +11,7 @@ function Gallery({ zdjecia, onUsun }) {
             <PhotoCard
               {...zdjecie}
               onUsun={() => onUsun(zdjecie.id)}
+              onPrzelacz={() => onPrzelacz(zdjecie.id)}
             />
           </div>
 

@@ -30,6 +30,14 @@ function App() {
     ])
   }
 
+  function przelaczUlubione(id) {
+    setZdjecia(
+      zdjecia.map(z =>
+        z.id === id ? { ...z, favorite: !z.favorite } : z
+      )
+    )
+  }
+
   return (
     <>
       <Navbar />
@@ -84,6 +92,7 @@ function App() {
         <Gallery
           zdjecia={widoczne}
           onUsun={usunZdjecie}
+          onPrzelacz={przelaczUlubione}
         />
       </main>
 
