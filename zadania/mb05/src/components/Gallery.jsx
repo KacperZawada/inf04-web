@@ -1,18 +1,21 @@
 import { Fragment } from 'react'
-import photos from '../data/photos.json'
-import PhotoCard from './PhotoCard'
-import PhotoModal from './PhotoModal'
+import PhotoCard from './PhotoCard.jsx'
+import PhotoModal from './PhotoModal.jsx'
 
-function Gallery() {
+function Gallery({ zdjecia, onUsun, onPrzelacz }) {
   return (
-    <div className="row g-4">
-      {photos.map((photo) => (
-        <Fragment key={photo.id}>
+    <div id="galeria" className="row g-4">
+      {zdjecia.map(zdjecie => (
+        <Fragment key={zdjecie.id}>
           <div className="col-12 col-md-6 col-lg-4">
-            <PhotoCard {...photo} />
+            <PhotoCard
+              {...zdjecie}
+              onUsun={() => onUsun(zdjecie.id)}
+              onPrzelacz={() => onPrzelacz(zdjecie.id)}
+            />
           </div>
 
-          <PhotoModal {...photo} />
+          <PhotoModal {...zdjecie} />
         </Fragment>
       ))}
     </div>

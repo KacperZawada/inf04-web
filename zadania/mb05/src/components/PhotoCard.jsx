@@ -1,36 +1,79 @@
-function PhotoCard({ id, title, description, category, image, alt }) {
-  const categoryLabels = {
-    gory: 'Góry',
-    morze: 'Morze',
-    miasto: 'Miasto',
-  }
+const NAZWA_KATEGORII = {
+  gory: 'Góry',
+  morze: 'Morze',
+  miasto: 'Miasto',
+}
 
-  const categoryColors = {
-    gory: 'success',
-    morze: 'primary',
-    miasto: 'secondary',
-  }
+const KOLOR_KATEGORII = {
+  gory: 'success',
+  morze: 'primary',
+  miasto: 'dark',
+}
 
+function PhotoCard({
+  id,
+  title,
+  description,
+  category,
+  image,
+  alt,
+  favorite,
+  onUsun,
+  onPrzelacz,
+}) {
   return (
-    <div className="card h-100">
+    <div className="card h-100 shadow-sm">
       <img src={image} className="card-img-top" alt={alt} />
 
-      <div className="card-body">
-        <span className={`badge text-bg-${categoryColors[category]} mb-2`}>
-          {categoryLabels[category]}
-        </span>
+      <div className="card-body d-flex flex-column">
+        <div className="d-flex justify-content-between align-items-start">
+          <h3 className="card-title h5">{title}</h3>
 
-        <h2 className="card-title h5">{title}</h2>
-        <p className="card-text">{description}</p>
+          <button
+            type="button"
+            className="btn btn-link p-0 fs-4 lh-1"
+            onClick={onPrzelacz}
+            aria-label={
+              favorite ? 'Usuń z ulubionych' : 'Dodaj do ulubionych'
+            }
+            aria-pressed={favorite}
+          >
+            {favorite ? (
+              <i className="bi bi-star-fill text-warning" />
+            ) : (
+              <i className="bi bi-star" />
+            )}
+          </button>
+        </div>
 
-        <button
-          className="btn btn-outline-primary"
-          type="button"
-          data-bs-toggle="modal"
-          data-bs-target={`#zdjecie${id}`}
-        >
-          Powiększ
-        </button>
+        <p>
+          <span className={`badge text-bg-${KOLOR_KATEGORII[category]}`}>
+            {NAZWA_KATEGORII[category]}
+          </span>
+        </p>
+
+        <p className="card-text text-body-secondary">
+          {description}
+        </p>
+
+        <div className="d-flex gap-2 mt-auto">
+          <button
+            type="button"
+            className="btn btn-outline-primary flex-fill"
+            data-bs-toggle="modal"
+            data-bs-target={`#zdjecie${id}`}
+          >
+            Powiększ
+          </button>
+
+          <button
+            type="button"
+            className="btn btn-outline-danger"
+            onClick={onUsun}
+          >
+            Usuń
+          </button>
+        </div>
       </div>
     </div>
   )
